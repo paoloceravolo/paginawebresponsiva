@@ -1,0 +1,10 @@
+body {font-size: 20px;}
+
+header, #sidebar, footer, #content {
+  height: 230px;
+  border: solid;
+}
+
+#content {
+  height: 630px;
+  background-color:  pink}
