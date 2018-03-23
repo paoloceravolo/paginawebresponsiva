@@ -28,6 +28,10 @@ footer {
   clear: both;
 }
 
+#mainbar > a {
+  display: none;
+}
+
 #mainbar {
   width: 70%;
   border: solid violet;
@@ -41,6 +45,10 @@ footer {
   border: solid pink;
   border-radius: 10%;
   position: relative;
+}
+
+#mainbar > ul > a{
+  display: none;
 }
 
 #mainbar > ul > li > a{
@@ -142,5 +150,26 @@ footer {
   body {font-size: 14px}
   header {height: auto};
   #content {width: auto; float: none}
-  #sidebar, #mainbar {display: none}
+  #sidebar {display: none}
+
+  #mainbar > a {
+    display:block;
+    margin: 3%;
+  }
+
+  #mainbar > ul > li{
+    display:none;
+  }
+
+  #mainbar > ul:target > li{
+    display:flex;
+  }
+  #mainbar > ul:target > a{
+    display:block;
+  }
+
+  nav:target > ul > li{
+    display:flex;
+  }
+
 }
