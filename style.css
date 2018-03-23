@@ -1,10 +1,79 @@
 body {font-size: 20px;}
 
-header, #sidebar, footer, #content {
-  height: 230px;
+header {
+  height: 160px;
   border: solid;
 }
 
+#sidebar{
+  position: relative;
+  width: 25%;
+  height: 200px;
+  background-color:  lime;
+  float: right;
+}
+
 #content {
-  height: 630px;
-  background-color:  pink}
+  position: relative;
+  left: 0px;
+  width: 70%;
+  background-color:  pink;
+  overflow: visible;
+  padding: 1%;
+  float: left;
+}
+
+footer {
+  position: sticky;
+  bottom: 5px;
+  clear: both;
+}
+
+#mainbar > ul {
+  width: 70%;
+  margin: 0 auto;
+}
+/* https://fontawesome.com */
+
+#mainbar > ul > li {
+  display: inline-block;
+  list-style: none;
+  line-height: 1;
+  margin: 2px;
+  border-radius: 3%;
+  position: relative;
+  border: solid;
+}
+
+#mainbar li ul {
+  list-style: none;
+  text-align: center;
+  max-height: 0px;
+  overflow: hidden;
+
+  transition: max-height 1s linear;
+}
+
+#mainbar li:hover ul{
+  max-height: 200px;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 900px){
+  #content {width: auto;}
+  #sidebar {width: 30%}
+}
+
+@media screen and (max-width: 700px){
+  #content {width: auto; float: none}
+  #sidebar {width: auto; float: none}
+}
+
+@media screen and (max-width: 400px){
+  body {font-size: 14px}
+  header {height: auto};
+  #content {width: auto; float: none}
+  #sidebar {display: none}
+}
