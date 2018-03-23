@@ -14,7 +14,6 @@ header {
 }
 
 #content {
-  position: relative;
   left: 0px;
   width: 70%;
   background-color:  pink;
@@ -29,51 +28,119 @@ footer {
   clear: both;
 }
 
-#mainbar > ul {
+#mainbar {
   width: 70%;
-  margin: 0 auto;
+  border: solid violet;
+  margin: 5px auto;
 }
-/* https://fontawesome.com */
 
-#mainbar > ul > li {
+#mainbar > ul > li{
   display: inline-block;
   list-style: none;
   line-height: 1;
-  margin: 2px;
-  border-radius: 3%;
+  border: solid pink;
+  border-radius: 10%;
   position: relative;
-  border: solid;
 }
 
-#mainbar li ul {
-  list-style: none;
-  text-align: center;
-  max-height: 0px;
-  overflow: hidden;
+#mainbar > ul > li > a{
+    color:inherit;
+    text-decoration:none !important;
+    font-size:24px;
+    padding: 25px;
+    float: left;
+}
 
-  transition: max-height 1s linear;
+#mainbar li ul{
+    position: absolute;
+    list-style:none;
+    text-align:center;
+    width:110%;
+    left:50%;
+    margin-left:-90px;
+    top:70px;
+    font:bold 12px 'Open Sans Condensed', sans-serif;
+
+    /* This is important for the show/hide CSS animation */
+    max-height:0px;
+    overflow:hidden;
+
+    -webkit-transition:max-height 0.9s linear;
+    -moz-transition:max-height 0.9s linear;
+    transition:max-height 0.9s linear;
 }
 
 #mainbar li:hover ul{
-  max-height: 200px;
+    max-height:200px;
 }
+
+#mainbar li ul li{
+    background-color:#313131;
+}
+
+#mainbar li ul li a{
+    padding:12px;
+    color:#fff !important;
+    text-decoration:none !important;
+    display:block;
+}
+
+#mainbar li ul li:nth-child(odd){ /* zebra stripes */
+    background-color:#363636;
+}
+
+#mainbar li ul li:hover{
+    background-color:#444;
+}
+
+#mainbar li ul li:first-child{
+    border-radius:3px 3px 0 0;
+    margin-top:25px;
+    position:relative;
+}
+
+#mainbar li ul li:first-child:before{ /* the pointer tip */
+    content:'';
+    position:absolute;
+    width:1px;
+    height:1px;
+    border:5px solid transparent;
+    border-bottom-color:#313131;
+    left:50%;
+    top:-10px;
+    margin-left:-5px;
+}
+
+#mainbar li ul li:last-child{
+    border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+}
+
+#mainbar li.green{
+    /* This is the color of the menu item */
+    background-color:#00c08b;
+
+    /* This is the color of the  */
+    color:#127a5d;
+}
+
+#mainbar li.red{       background-color:#ea5080;color:#aa2a52;}
+#mainbar li.blue{      background-color:#53bfe2;color:#2884a2;}
+#mainbar li.yellow{    background-color:#f8c54d;color:#ab8426;}
+#mainbar li.purple{    background-color:#df6dc2;color:#9f3c85;}
 
 
 /* Media Queries */
 
 @media screen and (max-width: 900px){
-  #content {width: auto;}
-  #sidebar {width: 30%}
-}
-
-@media screen and (max-width: 700px){
   #content {width: auto; float: none}
   #sidebar {width: auto; float: none}
+  #mainbar {width: auto; float: none}
 }
 
 @media screen and (max-width: 400px){
   body {font-size: 14px}
   header {height: auto};
   #content {width: auto; float: none}
-  #sidebar {display: none}
+  #sidebar, #mainbar {display: none}
 }
